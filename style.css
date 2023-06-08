@@ -15,13 +15,21 @@ body{
 .my_first_box{
     width: 30%;
     height: 100%;
-    background-color: aqua;
+    background-color: white;
+}
+
+.my_first_box>*{
+    border: 1px solid grey;
 }
 
 .my_second_box{
     width: 70%;
     height: 100%;
     background-color: lightcoral;
+}
+
+.my_second_box>*{
+    border: 1px solid grey;
 }
 
 .my_user_bar{
@@ -58,9 +66,10 @@ body{
 .my_text_box{
     width: 200px;
     height: 50px;
-    padding: 1rem;
+    padding: .7rem;
     border-radius: 7%;
     margin-top: 20px;
+    position: relative;
 }
 
 .my_received{
@@ -76,7 +85,7 @@ body{
 
 .my_second_footer{
     background-color: antiquewhite;
-    height: 9%;
+    height: 7.7%;
 }
 
 img{
@@ -109,5 +118,18 @@ img{
     text-decoration: underline;
 }
 
+.my_profile{
+    height: 50px;
+    width: 100%;
+}
+
+.my_date{
+    font-size: .7rem;
+    position: absolute;
+    top: 70%;
+    left: 85%;
+    color: gray;
+    
+}
 
 
