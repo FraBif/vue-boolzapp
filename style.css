@@ -121,6 +121,22 @@ img{
 .my_profile{
     height: 50px;
     width: 100%;
+    position: relative;
+}
+
+.my_profile_info{
+    position: absolute;
+    top: 3%;
+    left: 18%;
+    font-size: 1.3rem;
+}
+
+.my_messages{
+    position: absolute;
+    top: 50%;
+    right: 54%;
+    font-size: .9rem;
+    color: grey;
 }
 
 .my_date{
@@ -128,6 +144,15 @@ img{
     position: absolute;
     top: 70%;
     left: 85%;
+    color: gray;
+    
+}
+
+.my_second_date{
+    font-size: .7rem;
+    position: absolute;
+    top: 8%;
+    left: 92%;
     color: gray;
     
 }
