@@ -21,7 +21,7 @@ body{
 .my_second_box{
     width: 70%;
     height: 100%;
-    background-color: greenyellow;
+    background-color: lightcoral;
 }
 
 .my_user_bar{
@@ -42,7 +42,7 @@ body{
 
 .my_input_container{
     background-color: white;
-    border: 1px solid grey;
+    
 }
 
 .my_search_field{
@@ -53,6 +53,26 @@ body{
     background-image: url(img/mine.jpg);
     width: 100%;
     height: 83%;
+    padding-top: 3rem;
+}
+
+.my_text_box{
+    width: 200px;
+    height: 50px;
+    padding: 1rem;
+    border-radius: 7%;
+    margin-top: 20px;
+}
+
+.my_received{
+    background-color: white;
+    margin-left: 80px;
+    
+}
+
+.my_sent{
+    background-color: greenyellow;
+    margin-left: 550px;
 }
 
 
