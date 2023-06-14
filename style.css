@@ -16,6 +16,7 @@ body{
     width: 30%;
     height: 100%;
     background-color: white;
+    overflow: auto;
 }
 
 .my_first_box>*{
@@ -156,5 +157,7 @@ img{
     color: gray;
     
 }
+
+
 
 

@@ -12,7 +12,7 @@
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     
-        <div class=" d-flex my_container mt-6">
+        <div class=" d-flex my_container mt-6" id="app">
             <div class="my_first_box">
                 <div class="my_user_bar d-flex align-items-center justify-content-between p-2">
                     <div class="my_pic_box">
@@ -54,18 +54,18 @@
                         </span>
                     </div>
                 </div>
-                <div class="my_contacts p-1">
+                <div class="my_contacts p-1" v-for="name in contacts">
                     <article class="my_profile">
-                        <div class="my_profile_avatar">
-                           <img src="img/avatar_1.jpg" alt="">
+                        <div class="my_profile_avatar" v-for="avatar in contacts">
+                           <img src="contacts[index].avatar" alt="">
                         </div>
                         <div class="my_profile_info">
                             <h6 class="fw-bold">
-                                Michele
+                                
                             </h6>
                         </div>
                         <div class="my_messages">
-                            Mio messaggio
+                            
                         </div>
                         <span class="my_second_date">
                             13.01
