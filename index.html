@@ -54,18 +54,18 @@
                         </span>
                     </div>
                 </div>
-                <div class="my_contacts p-1" v-for="name in contacts">
+                <div class="my_contacts p-1" v-for="element in contacts">
                     <article class="my_profile">
-                        <div class="my_profile_avatar" v-for="avatar in contacts">
+                        <div class="my_profile_avatar">
                            <img src="contacts[index].avatar" alt="">
                         </div>
                         <div class="my_profile_info">
                             <h6 class="fw-bold">
-                                
+                                {{contacts[activeIndex].name}}
                             </h6>
                         </div>
                         <div class="my_messages">
-                            
+                            ultimo messaggio inviato
                         </div>
                         <span class="my_second_date">
                             13.01
