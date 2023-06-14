@@ -1,133 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    
-        <div class=" d-flex my_container mt-6" id="app">
-            <div class="my_first_box">
-                <div class="my_user_bar d-flex align-items-center justify-content-between p-2">
-                    <div class="my_pic_box">
-                        <span>
-                            <img src="img/avatar_io.jpg" alt="avatar_1">
-                        </span>
-                        <span class="fw-bold">
-                            Sofia
-                        </span>
-                    </div>
-                    <div class="my_icon_box">
-                        <span id="icon-holder">
-                            <i class="fa-solid fa-circle-notch fa-xl"></i>
-                            <i class="fa-regular fa-message fa-xl"></i>
-                            <i class="fa-solid fa-ellipsis-vertical fa-xl"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="my_note_bar p-2 d-flex">
-                    <div class="the-bell">
-                        <i id="my_bell_icon" class="fa-solid fa-bell-slash fa-2xl" style="color: #66ecff;"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                        <p>
-                            Ricevi notifiche di nuovi messaggi
-                        </p>
-                        <span class="my_subtitle">
-                            Attiva notifiche desktop
-                        </span>
-                    </div>
-                </div>
-                <div class="my_search_bar p-2">
-                    <div class="my_input_container">
-                        <span>
-                            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-                        </span>
-                        <span class="my_search_field">
-                            <input type="text" size="30" placeholder="Cerca o inizia una nuova chat">
-                        </span>
-                    </div>
-                </div>
-                <div class="my_contacts p-1" v-for="element in contacts">
-                    <article class="my_profile">
-                        <div class="my_profile_avatar">
-                           <img src="contacts[index].avatar" alt="">
-                        </div>
-                        <div class="my_profile_info">
-                            <h6 class="fw-bold">
-                                {{contacts[activeIndex].name}}
-                            </h6>
-                        </div>
-                        <div class="my_messages">
-                            ultimo messaggio inviato
-                        </div>
-                        <span class="my_second_date">
-                            13.01
-                        </span>
-                    </article>
-                </div>
-            </div>
-            <div class="my_second_box">
-                <div class="my_user_bar d-flex align-items-center justify-content-between p-2">
-                    <div class="my_pic_box">
-                        <span>
-                            <img src="img/avatar_1.jpg" alt="avatar_1">
-                        </span>
-                        <span class="fw-bold">
-                            Michele
-                        </span>
-                        <span class="my_last_visit">
-                            Ultimo accesso alle 14
-                        </span>
-                    </div>
-                    <div class="my_icon_box">
-                        <span id="icon-holder">
-                            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-                            <i class="fa-solid fa-paperclip fa-xl"></i>
-                            <i class="fa-solid fa-ellipsis-vertical fa-xl"></i>
-                        </span>
-                    </div>
-                </div>
-                <div class="my_message_board">
-                    <div class="my_text_box my_sent">
-                        che ne diresti di 
-                        <span class="my_date">
-                            13.01
-                        </span>
-                    </div>
-                    <div class="my_text_box my_sent">
-                        cereali cheerios
-                        <span class="my_date">
-                            13.01
-                        </span>
-                    </div>
-                    <div class="my_text_box my_received">
-                        le sette e un quarto
-                        <span class="my_date">
-                            13.05
-                        </span>
-                    </div>
-                </div>
-                <div class="my_second_footer p-2 d-flex align-items-center justify-content-around">
-                    <span>
-                        <i class="fa-regular fa-face-smile fa-xl"></i>
-                    </span>
-                    <input type="text" placeholder="Scrivi un messaggio" size="70">
-                    <span>
-                        <i class="fa-solid fa-microphone fa-xl"></i>
-                    </span>
-                </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Boolzapp</title>
+    </head>
+    <body>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js">
+        </script>
+        <div id="app">
+            <div class="container d-flex my_ancestor">
+
+                <main class="m-auto d-flex my_chat_app">
+                    <section class="my_lt-sect autoverflow">
+                        <header class="my_header">
+                            <section class="d-flex justify-content-between align-items-center my_info">
+                                <div class="d-flex align-items-center my_me">
+                                    <div class="my_me-img-container">
+                                        <img src="img/avatar_io.jpg" alt="sofia profile img">
+                                    </div>
+                                    <div class="my_me-avatars">
+                                        Sofia
+                                    </div>
+                                </div>
+                                <div class="d-flex my_avatars">
+                                    <i class="fa-solid fa-circle-notch"></i>
+                                    <i class="fa-solid fa-message"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </div>
+                            </section>
+                            <section class="d-flex justify-content-start align-items-center my_notify">
+                                <div class="d-flex my_notify-img-container">
+                                    <i class="fa-solid fa-bell-slash m-auto"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center my_notify-text">
+                                    <p class="m-0 my_notify-text">
+                                        Ricevi notifiche di nuovi messaggi
+                                    </p>
+                                    <a class="my_notify-link" href="#">
+                                        Attiva notifiche desktop
+                                    </a>
+                                </div>
+                            </section>
+                            <section class="d-flex justify-content-center align-items-center my_searchbar">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon1">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
+                                    <input type="text"
+                                        class="form-control"
+                                        placeholder="Cerca o inizia una nuova chat"
+                                        aria-label="Chat"
+                                        aria-describedby="basic-addon1"
+                                        v-model="nome"
+                                    />
+                                  </div>
+                            </section>
+                        </header>
+                        <main class="d-flex flex-column justify-content-stretch my_chats">
+                            <div class="d-flex justify-content-start align-items-center my_single-chat"
+                            v-for="(contact, index) in contacts"
+                            @click="getActiveIndex(index)"
+                            :class="{'my_active-single-chat': activeIndex === index, 'd-none': !contact.name.includes(nome)}">
+                                <div class="my_single-chat-img-container">
+                                    <img :src="contacts[index].avatar" alt="avatar di michele">
+                                </div>
+                                <div class="my_single-chat-text">
+                                    <p class="m-0 my_contanct-name">
+                                        {{contacts[index].name}}
+                                    </p>
+                                    <p class="m-0 my_last-message-sent" href="#">
+                                        Ultimo messaggio inviato
+                                    </p>
+                                </div>
+                                <p class="m-0 my_time">
+                                    12:00
+                                </p>
+                            </div>
+                        </main>
+                    </section>
+                    <section class="my_rt-sect">
+                        <header class="d-flex justify-content-between align-items-center my_rt-header">
+                            <div class="d-flex align-items-center my_current-chat">
+                                <div class="my_current-chat-img-container">
+                                    <img :src="contacts[activeIndex].avatar" :alt="`${contacts[activeIndex].name}'s profile img`">
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <p class="m-0 my_current-chat-name">
+                                        {{contacts[activeIndex].name}}
+                                    </p>
+                                    <p class="m-0 my_last-access">
+                                        Ultimo accesso oggi alle 12:00
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="d-flex my_icons">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </header>
+                        <main class="autoverflow my_chat-area d-flex flex-column">
+                            <div class="my_message"
+                            v-for="(message, messageIndex) in contacts[activeIndex].messages"
+                            :class="message.status === 'received' ? 'my_yours' : 'my_mine'">
+                                {{message.message}}
+                            </div>
+                        </main>
+
+                        <footer class="d-flex align-items-center my_messages-input-area">
+                            <div class="my_emoji my_button">
+                                <i class="fa-regular fa-face-smile"></i>
+                            </div>
+                            <div class="input-group m-auto">
+                                <input type="text"
+                                    class="form-control"
+                                    placeholder="Scrivi un messaggio"
+                                    aria-label="Message"
+                                    aria-describedby="basic-addon1"
+                                    v-model="newMessage"
+                                    @keydown.enter="handleKeyDown"
+                                />
+                            </div>
+                            <div class="my_audio my_button">
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
+                        </footer>
+                    </section>
+                </main>
             </div>
         </div>
-    
-     
-
-    <script src="script.js"></script>
-</body>
+        <script src="script.js">
+        </script>
+    </body>
 </html>
